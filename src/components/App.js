@@ -1,0 +1,24 @@
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+import { injectGlobal, ThemeProvider } from 'styled-components'
+import { HomePage, CheckoutPage } from 'components'
+import theme from './themes/default'
+
+injectGlobal`
+  body {
+    margin: 0;
+  }
+`
+
+const App = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <Switch>
+        <Route path="/" component={HomePage} exact />
+        <Route path="/insurance-type" component={CheckoutPage} exact />
+      </Switch>
+    </ThemeProvider>
+  )
+}
+
+export default App
