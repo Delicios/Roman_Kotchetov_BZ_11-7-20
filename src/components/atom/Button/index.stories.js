@@ -22,5 +22,5 @@ storiesOf('Button', module)
     <Button height={100}>Hello</Button>
   ))
   .add('link', () => (
-    <Button href="/">ARc repository</Button>
+    <Button href="/">Hello</Button>
   ))

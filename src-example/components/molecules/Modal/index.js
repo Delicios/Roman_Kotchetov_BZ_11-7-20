@@ -6,11 +6,11 @@ import { font, palette } from 'styled-theme'
 
 import { Heading, IconButton } from 'components'
 
-injectGlobal`
-  body.ReactModal__Body--open {
-    overflow: hidden;
-  }
-`
+// injectGlobal`
+//   body.ReactModal__Body--open {
+//     overflow: hidden;
+//   }
+// `
 
 const overlayStyles = css`
   position: fixed;

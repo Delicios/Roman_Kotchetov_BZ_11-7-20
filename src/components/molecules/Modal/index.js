@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css, injectGlobal } from 'styled-components'
+import styled, { css } from 'styled-components'
 import ReactModal from 'react-modal'
 import { font, palette } from 'styled-theme'
 
 import { Heading, IconButton } from 'components'
 
-injectGlobal`
-  body.ReactModal__Body--open {
-    overflow: hidden;
-  }
-`
+// injectGlobal`
+//   body.ReactModal__Body--open {
+//     overflow: hidden;
+//   }
+// `
 
 const overlayStyles = css`
   position: fixed;
@@ -100,18 +100,21 @@ const Content = styled.div`
 
 const StyledReactModal = styled(({ className, ...props }) => (
   <ModalBox overlayClassName={className} closeTimeoutMS={250} {...props} />
-))`${overlayStyles}`
+))`${overlayStyles}`;
+
 
 const Modal = ({
   children, title, closeable, onClose, ...props
 }) => {
   const { reverse } = props
   const hasHeader = title || closeable
+
   return (
     <StyledReactModal
       contentLabel={title || 'Modal'}
       onRequestClose={onClose}
       hasHeader={hasHeader}
+      appElement={document.getElementById('app')}
       {...props}
     >
       {hasHeader

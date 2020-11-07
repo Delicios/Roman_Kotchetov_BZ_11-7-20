@@ -14,7 +14,7 @@ theme.palette = {
   ],
 }
 
-theme.reversePalette = reversePalette(theme.palette);
+theme.reversePalette = reversePalette(theme.palette)
 
 theme.fonts = {
   primary: 'Roboto, Helvetica Neue, Helvetica, sans-serif'

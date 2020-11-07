@@ -1,14 +1,8 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import { injectGlobal, ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 import { HomePage, CheckoutPage } from 'components'
 import theme from './themes/default'
-
-injectGlobal`
-  body {
-    margin: 0;
-  }
-`
 
 const App = () => {
   return (
