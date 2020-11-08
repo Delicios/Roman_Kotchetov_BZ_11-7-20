@@ -22,7 +22,7 @@ const Wrapper = styled.span`
     width: 100%;
     height: 100%;
     fill: currentcolor;
-    stroke: currentcolor;
+    stroke: none;
   }
 `
 

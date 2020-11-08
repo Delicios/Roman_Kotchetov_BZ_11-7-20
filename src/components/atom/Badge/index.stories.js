@@ -4,11 +4,5 @@ import Badge from '.'
 
 storiesOf('Badge', module)
   .add('default', () => (
-    <Badge>Hello</Badge>
-  ))
-  .add('reverse', () => (
-    <Badge reverse>Hello</Badge>
-  ))
-  .add('another palette', () => (
-    <Badge palette="secondary">Hello</Badge>
+    <Badge>1</Badge>
   ))

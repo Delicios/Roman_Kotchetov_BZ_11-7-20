@@ -4,11 +4,11 @@ import Link from '.'
 
 storiesOf('Link', module)
   .add('default', () => (
-    <Link href="/">ARc repository</Link>
+    <Link href="/">Link</Link>
   ))
   .add('reverse', () => (
-    <Link href="/" reverse>ARc repository</Link>
+    <Link href="/" reverse>Link</Link>
   ))
   .add('another palette', () => (
-    <Link href="/" palette="secondary">ARc repository</Link>
+    <Link href="/" palette="secondary">Link</Link>
   ))

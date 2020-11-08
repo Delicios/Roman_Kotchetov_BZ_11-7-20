@@ -4,13 +4,7 @@ import styled, { css } from 'styled-components'
 import ReactModal from 'react-modal'
 import { font, palette } from 'styled-theme'
 
-import { Heading, IconButton } from 'components'
-
-// injectGlobal`
-//   body.ReactModal__Body--open {
-//     overflow: hidden;
-//   }
-// `
+import { Heading, IconButton, Icon } from 'components'
 
 const overlayStyles = css`
   position: fixed;
@@ -81,11 +75,22 @@ const Header = styled.header`
 `
 
 const StyledHeading = styled(Heading)`
-  margin: 0 1rem 0 0;
+  margin: 0;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-`
+  color: ${palette('primary', 1, true)};
+  font-size: .9rem;
+`;
+
+const StyledIcon = styled(Icon)`
+  transform: translate(0, 11px);
+  margin-right: 8px;
+  margin-bottom: 10px;
+  margin-top: 0;
+  fill: ${palette('primary', 1, true)};
+`;
+
 
 const StyledIconButton = styled(IconButton)`
   border-radius: 50%;
@@ -120,8 +125,10 @@ const Modal = ({
       {hasHeader
         && (
         <Header>
-          <StyledHeading level={2} reverse={reverse}>{title}</StyledHeading>
-          {closeable && <StyledIconButton icon="close" onClick={onClose} palette="primary" reverse transparent />}
+          <StyledHeading level={2} reverse={reverse}>
+            {title && <StyledIcon icon='umbrella' width={26} />} {title}
+          </StyledHeading>
+          {closeable && <StyledIconButton icon="close" onClick={onClose} reverse transparent />}
         </Header>
         )
       }

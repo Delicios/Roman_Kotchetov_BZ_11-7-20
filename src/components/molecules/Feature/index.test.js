@@ -29,7 +29,3 @@ it('renders link when passed in', () => {
   expect(wrapper.find({ href: 'test' })).toHaveLength(1)
 })
 
-it('renders badge when prop soon is passed in', () => {
-  const wrapper = wrap({ soon: true })
-  expect(wrapper.contains('soon')).toBe(true)
-})

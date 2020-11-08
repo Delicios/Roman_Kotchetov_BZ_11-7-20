@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { palette } from 'styled-theme'
 import {
-  Icon, FeatureList, Heading, Button, BrandBadge
+  Icon, NumberedHeader, Heading, Paragraph, OptionItem, CheckoutFooter
 } from 'components'
 
 const Wrapper = styled.div`
@@ -11,54 +11,17 @@ const Wrapper = styled.div`
   flex-direction: column;
   box-sizing: border-box;
   padding-bottom: 25px;
-`
-
-const StyledIcon = styled(Icon)`
-  margin: 0 auto;
-  height: 100px
-  width: 100px;
-  border-radius: 50%;
-  padding: 20px;
-  background: ${palette('primary', 1, true)};
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
-  margin-bottom: 45px;
-`
-
-const StyledHeading = styled(Heading)`
-  text-align: center;
-  font-weight: bold;
-  font-size: 44px;
-  line-height: 52px;
-  margin-bottom: 3.75rem;
-
-  @media screen and (max-width: 640px) {
-    font-size: 40px;
-    line-height: 47px;
-  }
-`;
-
-const StyledButton = styled(Button)`
-  background: ${palette('success', 0, true)};
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 50px;
-  height: 50px;
-  width: 312px;
-  margin: auto;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-  border-radius: .5rem;
-  margin-top: 4.375rem;
-  margin-bottom: 3.75rem;
 `;
 
 const Checkout = ({ ...props }) => {
   return (
     <Wrapper {...props}>
-      <StyledIcon icon='umbrella' palette='primary' reverse/>
-      <StyledHeading>So what gives?</StyledHeading>
-      <FeatureList />
-      <StyledButton another palette reverse href="/insurance-type" >GET STARTED</StyledButton>
-      <BrandBadge reverse>Hello</BrandBadge>
+      <NumberedHeader title="What type of insurance are you looking for?" step={1}/>
+      <OptionItem icon="briefcase" title="Professional Liability" description="Erros & Omissions (E&O insurance)" />
+      <OptionItem icon="cloud-rain" title="General Liability" description="Help mitigate against loss (CGL insurance)" />
+      <OptionItem icon="package" title="Business Owner’s Policy" description="The complete package (BOP)" />
+      <OptionItem icon="wifi" title="Cyber" description="Internet-bsed risks (CLIC)" />
+      <CheckoutFooter step={1}/>
     </Wrapper>
   )
 }

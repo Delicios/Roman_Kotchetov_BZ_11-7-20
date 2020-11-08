@@ -10,8 +10,4 @@ const Paragraph = styled.p`
   margin: 1rem 0 0;
 `
 
-Paragraph.propTypes = {
-  reverse: PropTypes.bool,
-}
-
 export default Paragraph
