@@ -49,7 +49,7 @@ const Feature = ({
   const { soon } = props
   return (
     <Wrapper {...props}>
-      {icon && <StyledIcon icon={icon} width={64} />}
+      {icon && <StyledIcon icon={umbrella} width={64} />}
       <Text>
         <Heading level={2}>
           {link ? <Link href={link}>{title}</Link> : title}

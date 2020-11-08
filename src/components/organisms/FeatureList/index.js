@@ -32,8 +32,8 @@ const StyledList = styled(List)`
     height: 36px;
     width: 36px;
     line-height: 36px;
-    background-color: ${palette('primary', 0, true)}
-    color: ${palette('primary', 1, true)}
+    background-color: ${palette('primary', 0, true)};
+    color: ${palette('primary', 1, true)};
     text-align: center;
     font-weight: bold;
   }

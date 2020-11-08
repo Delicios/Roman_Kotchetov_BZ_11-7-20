@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { palette } from 'styled-theme'
 import {
@@ -15,7 +14,7 @@ const Wrapper = styled.div`
 
 const StyledIcon = styled(Icon)`
   margin: 0 auto;
-  height: 100px
+  height: 100px;
   width: 100px;
   border-radius: 50%;
   padding: 20px;
@@ -54,7 +53,7 @@ const StyledButton = styled(Button)`
 const GettingStarted = ({ ...props }) => {
   return (
     <Wrapper {...props}>
-      <StyledIcon icon='umbrella' palette='primary' reverse/>
+      <StyledIcon icon="umbrella" palette="primary" reverse/>
       <StyledHeading>So what gives?</StyledHeading>
       <FeatureList />
       <StyledButton another palette reverse href="/insurance-type" >GET STARTED</StyledButton>
