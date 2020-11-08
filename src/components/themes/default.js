@@ -4,9 +4,10 @@ const theme = {}
 
 theme.palette = {
   primary: ['#0074D9', '#A8DAFF'],
-  success: ['#71F79F'],
+  success: ['#71F79F', '#a3fac2'],
   white: ['#fff'],
   grayscale: [
+    '#000',
     '#333',
     '#bdbdbd',
     '#eeeeee',

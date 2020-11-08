@@ -15,32 +15,29 @@ const hoverBackgroundColor = ({ disabled, transparent }) => !disabled && !transp
 const hoverForegroundColor = ({ disabled, transparent }) => !disabled && transparent && palette(0)
 
 const styles = css`
+  text-decoration: none;
+  color: ${palette('grayscale', 4, true)};
   display: inline-flex;
-  font-family: ${font('primary')};
   align-items: center;
   white-space: nowrap;
-  font-size: ${fontSize};
-  border: 0.0625em solid ${ifProp('transparent', 'currentcolor', 'transparent')};
-  height: 2.5em;
   justify-content: center;
-  text-decoration: none;
-  cursor: ${ifProp('disabled', 'default', 'pointer')};
-  appearance: none;
-  padding: 0 1.125em;
-  border-radius: 0.125em;
-  box-sizing: border-box;
-  pointer-events: ${ifProp('disabled', 'none', 'auto')};
-  transition: background-color 250ms ease-out, color 250ms ease-out, border-color 250ms ease-out;
-  background-color: ${backgroundColor};
-  color: ${foregroundColor};
+  margin: 0 auto;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: .5rem;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: ease .125s box-shadow, ease .125s background-color;
+  color: #333;
+  font-weight: bold;
 
   &:hover, &:focus, &:active {
-    background-color: ${hoverBackgroundColor};
-    color: ${hoverForegroundColor};
+    background-color: ${palette('success', 0, true)};
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
   }
 
   &:focus {
-    outline: none
+    outline: none;
   }
 `
 

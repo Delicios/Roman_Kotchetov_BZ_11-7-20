@@ -9,25 +9,40 @@ const styles = css`
   padding: 0 1em;
   line-height: 1rem;
 
-  color: ${palette({ grayscale: 0 }, 1)};
+  li {
+    counter-increment: counter;
+    line-height: 1rem;
+    padding-left: 3em;
+    list-style: none;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 23px;
+    position: relative;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+  }
+
+  li::before {
+    content: counter(counter);
+    right: 100%; 
+    margin-right: calc(36px * -1);
+    position: absolute;
+    border-radius: 50%;
+    padding: 0;
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    background-color: ${palette('primary', 0, true)};
+    color: ${palette('primary', 1, true)};
+    text-align: center;
+    font-weight: bold;
+  }
 `
 
-const Ol = styled.ol`${styles}`
-const Ul = styled.ul`${styles}`
 
-const List = ({ ordered, children, ...props }) => {
-  return React.createElement(ordered ? Ol : Ul, props, children)
-}
-
-List.propTypes = {
-  ordered: PropTypes.bool,
-  palette: PropTypes.string,
-  reverse: PropTypes.bool,
-  children: PropTypes.any,
-}
-
-List.defaultProps = {
-  palette: 'grayscale',
+const List = ({ ...props }) => {
+  return React.createElement(styled.ol`${styles}`, props)
 }
 
 export default List

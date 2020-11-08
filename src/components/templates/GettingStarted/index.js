@@ -37,17 +37,19 @@ const StyledHeading = styled(Heading)`
 `;
 
 const StyledButton = styled(Button)`
-  background: ${palette('success', 0, true)};
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 50px;
+  background: ${palette('success', 1, true)};
   height: 50px;
   width: 312px;
-  margin: auto;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-  border-radius: .5rem;
   margin-top: 4.375rem;
   margin-bottom: 3.75rem;
+
+  &:hover, &:focus, &:active {
+    background-color: ${palette('success', 0, true)};
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+  }
+  &:focus {
+    outline: none;
+  }
 `;
 
 const GettingStarted = ({ ...props }) => {
@@ -56,7 +58,7 @@ const GettingStarted = ({ ...props }) => {
       <StyledIcon icon="umbrella" palette="primary" reverse/>
       <StyledHeading>So what gives?</StyledHeading>
       <FeatureList />
-      <StyledButton another palette reverse href="/insurance-type" >GET STARTED</StyledButton>
+      <StyledButton href="/insurance-type">GET STARTED</StyledButton>
       <BrandBadge reverse>Hello</BrandBadge>
     </Wrapper>
   )

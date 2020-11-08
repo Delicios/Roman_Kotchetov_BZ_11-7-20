@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding-bottom: 25px;
+  padding-bottom: 4rem;
 `;
 
 const Checkout = ({ ...props }) => {

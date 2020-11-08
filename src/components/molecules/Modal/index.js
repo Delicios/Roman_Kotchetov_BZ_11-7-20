@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import ReactModal from 'react-modal'
 import { font, palette } from 'styled-theme'
 
-import { Heading, IconButton, Icon } from 'components'
+import { Heading, Button, Icon } from 'components'
 
 const overlayStyles = css`
   position: fixed;
@@ -38,7 +38,7 @@ const ModalBox = styled(ReactModal)`
   bottom: auto;
   margin: 1rem calc(-50% + 1rem) 1rem 1rem;
   transform: translate(-50%, 100%);
-  transition: transform 500ms ease-in-out;
+  transition: transform 16ms ease;
   outline: none;
   box-sizing: border-box;
   min-width: 320px;
@@ -46,12 +46,13 @@ const ModalBox = styled(ReactModal)`
   max-height: calc(100% - 1rem);
   padding-top: ${({ hasHeader }) => hasHeader ? 0 : '1rem'};
   box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+  overflow: hidden;
   
   @media screen and (max-width: 640px) {
     width: calc(100%);
-    min-width: 0;
-    max-width: calc(640px);
-    max-height: calc(100%);
+    min-width: 320px;
+    max-width: 640px;
+    height: 100vh;
     top: 50%;
     left: 50%;
     border-radius: 0em;
@@ -68,7 +69,8 @@ const ModalBox = styled(ReactModal)`
 const Header = styled.header`
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem 2rem;
+  height: 60px;
   > *:first-child {
     flex: 1;
   }
@@ -91,15 +93,30 @@ const StyledIcon = styled(Icon)`
   fill: ${palette('primary', 1, true)};
 `;
 
-
-const StyledIconButton = styled(IconButton)`
+const StyledButton = styled(Button)`
   border-radius: 50%;
   border: none;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  color: ${palette('primary', 0, true)};
+  
+  &:hover, &:focus, &:active {
+    background-color: ${palette('success', 1, true)};
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+    color: ${palette('grayscale', 0, true)};
+  }
+  
+  &:focus {
+    outline: none;
+  }
 `;
 
 const Content = styled.div`
   overflow: auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
   margin-bottom: 1rem;
 `
 
@@ -128,7 +145,7 @@ const Modal = ({
           <StyledHeading level={2} reverse={reverse}>
             {title && <StyledIcon icon='umbrella' width={26} />} {title}
           </StyledHeading>
-          {closeable && <StyledIconButton icon="close" onClick={onClose} reverse transparent />}
+          {closeable && <StyledButton onClick={onClose} reverse transparent><Icon icon="close" /></StyledButton>}
         </Header>
         )
       }
