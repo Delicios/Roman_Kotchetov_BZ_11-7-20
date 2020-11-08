@@ -30,7 +30,3 @@ it('renders anchor when href is passed in', () => {
   expect(wrapper.find('a')).toHaveLength(1)
 })
 
-it('renders Link when to is passed in', () => {
-  const wrapper = wrap({ to: 'test' }).dive()
-  expect(wrapper.find('Link')).toHaveLength(1)
-})
