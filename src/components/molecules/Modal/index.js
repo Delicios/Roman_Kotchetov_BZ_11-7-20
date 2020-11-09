@@ -38,7 +38,6 @@ const ModalBox = styled(ReactModal)`
   bottom: auto;
   margin: 1rem calc(-50% + 1rem) 1rem 1rem;
   transform: translate(-50%, 100%);
-  transition: transform 16ms ease;
   outline: none;
   box-sizing: border-box;
   min-width: 320px;

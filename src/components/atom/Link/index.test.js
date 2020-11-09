@@ -18,8 +18,3 @@ it('renders anchor by default', () => {
   const wrapper = wrap()
   expect(wrapper.find('a')).toHaveLength(1)
 })
-
-it('renders Link when prop to is passed in', () => {
-  const wrapper = wrap({ to: 'test' }).dive()
-  expect(wrapper.find('NavLink')).toHaveLength(1)
-})

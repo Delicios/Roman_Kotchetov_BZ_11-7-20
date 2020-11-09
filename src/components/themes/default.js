@@ -7,7 +7,6 @@ theme.palette = {
   success: ['#71F79F', '#a3fac2'],
   white: ['#fff'],
   grayscale: [
-    '#000',
     '#333',
     '#bdbdbd',
     '#eeeeee',

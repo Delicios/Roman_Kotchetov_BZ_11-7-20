@@ -14,11 +14,6 @@ it('renders props when passed in', () => {
   expect(wrapper.find({ id: 'foo' })).toHaveLength(1)
 })
 
-it('renders ul by default', () => {
-  const wrapper = wrap()
-  expect(wrapper.find('ul')).toHaveLength(1)
-})
-
 it('renders ol when ordered prop is passed in', () => {
   const wrapper = wrap({ ordered: true })
   expect(wrapper.find('ol')).toHaveLength(1)

@@ -1,18 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
-import Link from 'react-router-dom'
-import { font, palette } from 'styled-theme'
-import { ifProp } from 'styled-tools'
-
-const fontSize = ({ height }) => `${height / 40}rem`
-
-const backgroundColor = ({ transparent, disabled }) => transparent ? 'transparent' : palette(disabled ? 2 : 1)
-
-const foregroundColor = ({ transparent, disabled }) => transparent ? palette(disabled ? 2 : 1) : palette('grayscale', 0, true)
-
-const hoverBackgroundColor = ({ disabled, transparent }) => !disabled && !transparent && palette(0)
-const hoverForegroundColor = ({ disabled, transparent }) => !disabled && transparent && palette(0)
+import React from 'react';;
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
+import Link from 'react-router-dom';
+import { palette } from 'styled-theme';
 
 const styles = css`
   text-decoration: none;
@@ -30,6 +20,7 @@ const styles = css`
   transition: ease .125s box-shadow, ease .125s background-color;
   color: #333;
   font-weight: bold;
+  text-transform: uppercase;
 
   &:hover, &:focus, &:active {
     background-color: ${palette('success', 0, true)};
@@ -39,10 +30,16 @@ const styles = css`
   &:focus {
     outline: none;
   }
+
+  &:hover:disabled, &:focus:disabled {
+    cursor: unset;
+    background-color: rgba(239,239,239,.3);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  }
 `
 
 const StyledLink = styled(({
-  disabled, transparent, reverse, palette, height, theme, ...props
+  disabled, ...props
 }) => <Link {...props} />)`${styles}`
 
 const Anchor = styled.a`${styles}`

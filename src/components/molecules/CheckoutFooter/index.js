@@ -1,7 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import { palette } from 'styled-theme'
-import { Button, Icon } from 'components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { palette } from 'styled-theme';
+import { Button, Icon } from 'components';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -32,26 +33,52 @@ const ButtonWrapper = styled.div`
 const StyledButton = styled(Button)`
   height: 36px;
   width: 36px;
+  line-height: 34px;
   color: ${palette('grayscale', 4, true)};
+  background: ${palette('grayscale', 0, true)};
+
+  &:hover, &:focus, &:active {
+    background-color: ${palette('success', 0, true)};
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+  }
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
 `;
 
 const CheckoutFooter = ({ ...props }) => {
-  const { title, step } = props;
+  const { step } = props;
   return (
     <Wrapper>
       <div className="step-location">
-        1/7
+        {step}
       </div>
       <ButtonWrapper>
-        <StyledButton disabled>
-          <Icon icon='chevronUp'/>
+        <StyledButton disabled className="disabled" href="/">
+          <Icon icon="chevronUp"/>
         </StyledButton>
-        <StyledButton>
-          <Icon icon='chevronDown' />
+        <StyledButton href="/payment">
+          <Icon icon="chevronDown" />
         </StyledButton>
       </ButtonWrapper>
     </Wrapper>
   )
+}
+
+CheckoutFooter.propTypes = {
+  step: PropTypes.string
 }
 
 export default CheckoutFooter;

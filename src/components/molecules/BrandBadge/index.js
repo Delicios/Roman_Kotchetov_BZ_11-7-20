@@ -16,7 +16,7 @@ const StyledBadge = styled.div`
   line-height: 1.5rem;
   padding: 0.1em 0.3em;
   text-align: center;
-  color: ${palette('grayscale', 2, true)};
+  color: ${palette('grayscale', 1, true)};
 `
 
 const BrandBadge = ({ ...props }) => {

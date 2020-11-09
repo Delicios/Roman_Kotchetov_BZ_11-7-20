@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
-import { HomePage, CheckoutPage } from 'components'
+import { HomePage, CheckoutPage, PaymentPage } from 'components'
 import theme from './themes/default'
 
 const App = () => {
@@ -10,6 +10,7 @@ const App = () => {
       <Switch>
         <Route path="/" component={HomePage} exact />
         <Route path="/insurance-type" component={CheckoutPage} exact />
+        <Route path="/payment" component={PaymentPage} exact />
       </Switch>
     </ThemeProvider>
   )

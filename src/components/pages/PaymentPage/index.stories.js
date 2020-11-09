@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import Link from '.'
+import { HomePage } from 'components'
 
-storiesOf('Link', module)
+storiesOf('HomePage', module)
   .add('default', () => (
-    <Link href="/">Link</Link>
+    <HomePage />
   ))

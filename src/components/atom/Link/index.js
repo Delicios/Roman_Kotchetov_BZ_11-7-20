@@ -31,7 +31,6 @@ const Link = ({ ...props }) => {
 
 Link.propTypes = {
   palette: PropTypes.string,
-  reverse: PropTypes.bool,
   to: PropTypes.string,
 }
 

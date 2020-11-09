@@ -20,8 +20,12 @@ const StyledIcon = styled(Icon)`
   padding: 20px;
   background: ${palette('primary', 1, true)};
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
-  margin-bottom: 45px;
-`
+  margin-bottom: .75rem;
+  
+  @media screen and (max-width: 640px) {
+    margin-bottom: 45px;
+  }
+`;
 
 const StyledHeading = styled(Heading)`
   text-align: center;
@@ -40,15 +44,22 @@ const StyledButton = styled(Button)`
   background: ${palette('success', 1, true)};
   height: 50px;
   width: 312px;
-  margin-top: 4.375rem;
-  margin-bottom: 3.75rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 
   &:hover, &:focus, &:active {
     background-color: ${palette('success', 0, true)};
     box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
   }
+
   &:focus {
     outline: none;
+  }
+  
+  @media screen and (max-width: 640px) {
+    margin-top: 4.375rem;
+    margin-bottom: 3.75rem;
+    width: 100%;
   }
 `;
 

@@ -19,13 +19,4 @@ it('renders title', () => {
   expect(wrapper.contains('Test')).toBe(true)
 })
 
-it('renders icon when passed in', () => {
-  const wrapper = wrap({ icon: 'test' })
-  expect(wrapper.find({ icon: 'test' })).toHaveLength(1)
-})
-
-it('renders link when passed in', () => {
-  const wrapper = wrap({ link: 'test' })
-  expect(wrapper.find({ href: 'test' })).toHaveLength(1)
-})
 

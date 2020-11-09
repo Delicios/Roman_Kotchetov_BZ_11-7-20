@@ -38,6 +38,10 @@ const Wrapper = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   margin-bottom: 1.25rem;
+
+  .selected {
+    border-color: red;
+  }
 `;
 
 const OptionItem = ({ ...props }) => {
