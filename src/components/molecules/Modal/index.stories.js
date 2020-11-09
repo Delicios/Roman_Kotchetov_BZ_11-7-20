@@ -19,8 +19,3 @@ storiesOf('Modal', module)
       Ullamco et reprehenderit magna cillum ullamco consectetur et enim aliqua.
     </Modal>
   ))
-  .add('reverse', () => (
-    <Modal onClose={action('closed')} reverse isOpen>
-      Ullamco et reprehenderit magna cillum ullamco consectetur et enim aliqua.
-    </Modal>
-  ))

@@ -4,5 +4,5 @@ import { OptionItem } from 'components'
 
 storiesOf('OptionItem', module)
   .add('default', () => (
-    <OptionItem step={2}>Hello</OptionItem>
+    <OptionItem step={2} title="Title" icon="zap" description="Description">Hello</OptionItem>
   ))

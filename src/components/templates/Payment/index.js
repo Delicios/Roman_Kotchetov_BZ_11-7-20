@@ -139,7 +139,6 @@ const PricePerYear = styled.div`
   color: #828282;
 `;
 
-
 const GettingStarted = ({ ...props }) => {
   return (
     <Wrapper {...props}>

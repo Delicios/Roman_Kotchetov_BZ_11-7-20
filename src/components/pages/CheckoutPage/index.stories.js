@@ -1,8 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { HomePage } from 'components'
+import { CheckoutPage } from 'components'
 
-storiesOf('HomePage', module)
+storiesOf('CheckoutPage', module)
   .add('default', () => (
-    <HomePage />
+    <CheckoutPage />
   ))

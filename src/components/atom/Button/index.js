@@ -17,6 +17,8 @@ const styles = css`
   text-align: center;
   cursor: pointer;
   border: none;
+  height: 40px;
+  width: 80px;
   transition: ease .125s box-shadow, ease .125s background-color;
   color: #333;
   font-weight: bold;
@@ -46,10 +48,8 @@ const Anchor = styled.a`${styles}`
 const StyledButton = styled.button`${styles}`
 
 const Button = ({ type, ...props }) => {
-  const { to, href } = props
-  if (to) {
-    return <StyledLink {...props} />
-  } if (href) {
+  const { href } = props
+  if (href) {
     return <Anchor {...props} />
   }
   return <StyledButton {...props} type={type} />
@@ -58,11 +58,6 @@ const Button = ({ type, ...props }) => {
 Button.propTypes = {
   disabled: PropTypes.bool,
   palette: PropTypes.string,
-  transparent: PropTypes.bool,
-  reverse: PropTypes.bool,
-  height: PropTypes.number,
-  type: PropTypes.string,
-  to: PropTypes.string,
   href: PropTypes.string,
 }
 
